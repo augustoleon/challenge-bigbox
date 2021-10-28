@@ -6,6 +6,7 @@
     </div>
     <template v-else>
       <div class="first-container">
+        <!-- <Carousel :image="image" ></Carousel> -->
         <div class="container">
           <img :src="image[0]" alt="" />
         </div>
@@ -62,10 +63,8 @@
       </div>
 
       <div class="row justify-content-md-center">
-        <card :activities="activities" />
+        <Card :activities="activities" />
       </div>
-
-      <!-- <carousel :image="image" ></carousel> -->
     </template>
   </div>
 </template>

@@ -1,48 +1,30 @@
 <template>
-  <div v-for="img in image" :key="img">
-    <VueSlickCarousel v-bind="settings">
-      <div>
-        <img :src="image" :alt="img" />
-      </div>
-    </VueSlickCarousel>
+  <div>
+    <Carousel
+      v-for="img in image"
+      :key="img"
+      :perPageCustom="[
+        [768, 3],
+        [1024, 4],
+      ]"
+      :scrollPerPage="true"
+    >
+      <Slide>
+        <img :src="img" :alt="img" />
+      </Slide>
+    </Carousel>
   </div>
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   name: 'Carousel',
 
   props: ['image'],
 
-  data() {
-    return {
-      settings: {
-        dots: true,
-        dotsClass: 'slick-dots custom-dot-class',
-        edgeFriction: 0.35,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    }
-  },
-
-  components: { VueSlickCarousel },
-
-  // created() {
-  //    this.getImage
-  // },
-
-  // methods: {
-  //   getImage() {
-  //     const id = this.$route.params.id
-  //     api.getActivityById(id).then((data) => (this.image = data.image))
-  //   },
-  // }
+  components: { Carousel, Slide },
 }
 </script>
 

@@ -6,7 +6,7 @@
     </div>
 
     <div v-else class="row justify-content-md-center">
-      <card class="animate__fadeOutUp" :activities="activities" />
+      <Card class="animate__fadeOutUp" :activities="activities" />
 
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
